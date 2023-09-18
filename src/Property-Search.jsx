@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 function PropertySearch() {
   const [properties, setProperties] = useState([]);
@@ -10,16 +10,16 @@ function PropertySearch() {
     propertyType: '',
   });
 
-  useEffect(() => {
-    // Fetch properties based on filters
-    axios.get('/api/list-properties', { params: filters })
-      .then((response) => {
-        setProperties(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [filters]);
+//   useEffect(() => {
+//     // Fetch properties based on filters
+//     axios.get('/api/list-properties', { params: filters })
+//       .then((response) => {
+//         setProperties(response.data);
+//       })
+//       .catch((error) => {
+//         console.error(error);
+//       });
+//   }, [filters]);
 
   const handleFilterChange = (event) => {
     const { name, value } = event.target;
