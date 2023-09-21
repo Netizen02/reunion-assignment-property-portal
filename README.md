@@ -1,3 +1,85 @@
+# Problem Statement
+
+You are building a comprehensive property portal where tenants can find properties as per their requirements and property owners can add/delete/update properties available with them for renting.
+
+## Tech Stack
+- Front End: React
+- Back End: Node.js/Express, MongoDB
+- Deployment: Firebase, and MongoDB Atlas
+- API Testing: HoppscotchIO, and Postman
+
+## Front End: 
+### Property Search / Listing Page:
+- This is the home page listing all available properties.
+- Options to filter properties
+    - Location - Drop down - showing city list
+    - Available from date - calendar drop down
+    - Price range - slider
+    - Property type - dropdown
+- This is a public page, i.e. non-authenticated users can also access it.
+- No pagination to be implemented. All properties fetched from API should be shown in a single page.
+- Page is responsive.
+
+### User Login Sidebar:
+- This is a sidebar which opens after pressing the login button on the navbar.
+- Login via Google Account using Firebase.
+- Login functionality:
+    - User login allows registered users to log in with their email and password. A JWT token is generated upon successful login.
+
+### User Resgistration Sidebar:
+- This is a sidebar which opens after pressing the registration button on the navbar.
+- Register via Google Account using Firebase.
+- Registration functionality:
+    - User registration allows users to register with their name, email, and password. A JWT token is generated upon successful login.
+
+### User Profile Page:
+- This is the profile page listing details of the user.
+- Options for the profile page
+    - Add details of user
+- This is a private page, i.e. only authenticated users can access it.
+- Page is responsive
+
+## Back End
+### API Development:
+1. **Fetch all available properties**
+    1. Route: api/list-properties
+    2. Method: Choose an appropriate method applicable
+    3. Use this API to show the properties on the Property Search / Listing Page
+    4. This is public endpoint, i.e. unauthenticated user can also access this
+2. **Add a property**
+    1. Route: api/property
+    2. Method: Choose an appropriate method applicable
+    3. No front end to be developed for this
+    4. This is a private endpoint, i.e. only authenticated users can access this page
+    5. This endpoint will be used by property owners to add properties, which will then be visible to tenants using the fetch API endpoint
+3. **Update a property**
+    1. Route: api/property/:id
+    2. Method: Choose an appropriate method applicable
+    3. No front end to be developed for this
+    4. This is a private endpoint, i.e. only authenticated users can access this page
+    5. This endpoint will be used by property owners to update their existing properties that they have listed on the portal. Updates done by property owners with this endpoint will be visible to tenants using the fetch API endpoint
+    6. Users (property owners) can update only the properties they have listed and not the properties owned by others
+4. **Delete a property**
+    1. Route: api/property/:id
+    2. Method: Choose an appropriate method applicable
+    3. This endpoint will be used by the property owners to delete any property that they have listed on the portal.
+    4. Other requirements are similar to point 3 above
+5. **List my properties**
+    1. Route: api/property
+    2. Method: Choose an appropriate method applicable
+    3. This endpoint will be used by property owners to get the list of all the properties they have listed on the portal
+    4. Other requirements are similar to point 3 above
+6. **Signup endpoint**
+    1. Route: api/signup
+    2. Method: Choose an appropriate method applicable
+    3. Used by users (property owners) to register to the portal
+    4. User registration via valid email IDs only
+    5. No confirmation email or OTP to be sent for email confirmation. Only requirement is to have email ID in valid format
+7. **Login endpoint**
+    1. Route: api/login
+    2. Method: Choose an appropriate method applicable
+    3. Used by registered users to login and authenticate themselves
+    4. Authentication via JWT tokens 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
