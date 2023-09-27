@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaBars, FaTimes } from "react-icons/fa";
+import "../componentStyles/main.css";
 
 function Navbar(){
     const navRef = useRef();
@@ -9,9 +10,8 @@ function Navbar(){
 
     return(
         <header>
-            <h3>Logo</h3>
+            <a href="/#Home"><h3>Logo</h3></a>
             <nav ref={navRef}>
-                <a href="/#">Home</a>
                 <a href="/#">Login</a>
                 <a href="/#">Rent out a Property</a>
                 <button className='nav-btn nav-close-btn' onClick={showNavBar}>
